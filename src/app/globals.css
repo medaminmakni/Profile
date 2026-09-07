@@ -603,3 +603,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 900px) {
   .case-related { grid-template-columns: 1fr; }
 }
+
+/* Notes and single notes read as a centred column, so the section rules
+   frame the text instead of running past it. */
+.notes-page .container,
+.note-page .container { width: min(860px, calc(100% - 48px)); }
+.notes-page .notes-hero h1,
+.note-page .note-header h1 { max-width: 100%; }
+.note-body p, .note-body ul, .note-lead, .notes-lead, .note-takeaway { max-width: 100%; }
+.note-card h2 { max-width: 100%; }
