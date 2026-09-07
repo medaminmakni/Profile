@@ -5,8 +5,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Container from "@/components/layout/Container";
 import { getNote, notes } from "@/data/notes";
 import { profile } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 
-const siteUrl = "https://med-amin-makni.vercel.app";
 
 export function generateStaticParams() {
   return notes.map((note) => ({ slug: note.slug }));

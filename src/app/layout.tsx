@@ -3,9 +3,10 @@ import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { profile } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const siteUrl = "https://med-amin-makni.vercel.app";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

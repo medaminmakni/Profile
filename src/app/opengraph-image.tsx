@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { siteDomain } from "@/lib/site";
 
 export const alt = "Mohamed Amin MAKNI — AI Engineer";
 export const size = { width: 1200, height: 630 };
@@ -54,7 +55,7 @@ export default async function OpenGraphImage() {
             fontSize: 25,
           }}
         >
-          <div style={{ display: "flex" }}>med-amin-makni.vercel.app</div>
+          <div style={{ display: "flex" }}>{siteDomain}</div>
           <div style={{ display: "flex" }}>Sfax, Tunisia · Open to opportunities</div>
         </div>
       </div>

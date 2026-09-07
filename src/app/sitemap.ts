@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { notes } from "@/data/notes";
-
-const siteUrl = "https://med-amin-makni.vercel.app";
+import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

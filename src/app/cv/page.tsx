@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { certifications, education, profile } from "@/data/portfolio";
+import { siteDomain, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Professional CV",
@@ -79,9 +80,9 @@ export default function CvPage() {
             <span>{profile.location}</span>
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
             <a href={`tel:${profile.phone.replaceAll(" ", "")}`}>{profile.phone}</a>
-            <a href="https://med-amin-makni.vercel.app">med-amin-makni.vercel.app</a>
+            <a href={siteUrl}>{siteDomain}</a>
             <a href={profile.links.linkedin}>linkedin.com/in/makni-med-amin</a>
-            <a href={profile.links.github}>github.com/xAminxxx</a>
+            <a href={profile.links.github}>github.com/medaminmakni</a>
           </address>
         </header>
 

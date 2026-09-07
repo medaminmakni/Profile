@@ -8,7 +8,7 @@ Updated 24 July 2026.
 - Location: Sfax, Tunisia.
 - Primary positioning: AI Engineer and Software Engineer.
 - Main evidence areas: computer vision, document intelligence, RAG, LLM applications, intelligent agents, backend integration, and full-stack delivery.
-- Public profiles: `linkedin.com/in/makni-med-amin` and `github.com/xAminxxx`.
+- Public profiles: `linkedin.com/in/makni-med-amin` and `github.com/medaminmakni`.
 
 ## Verified education and credentials
 

@@ -13,6 +13,7 @@ import {
 import Container from "@/components/layout/Container";
 import ProjectVisual from "@/components/ProjectVisual";
 import { notes } from "@/data/notes";
+import { siteUrl } from "@/lib/site";
 import {
   approach,
   certifications,
@@ -45,8 +46,8 @@ export default function Home() {
     address: { "@type": "PostalAddress", addressLocality: "Sfax", addressCountry: "TN" },
     email: `mailto:${profile.email}`,
     telephone: profile.phone,
-    url: "https://med-amin-makni.vercel.app",
-    image: "https://med-amin-makni.vercel.app/images/profile.jpg",
+    url: siteUrl,
+    image: `${siteUrl}/images/profile.jpg`,
     sameAs: [profile.links.linkedin, profile.links.github],
     alumniOf: education.map((item) => ({
       "@type": "CollegeOrUniversity",
@@ -88,7 +89,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     name: `${profile.name} — Engineering Portfolio`,
-    url: "https://med-amin-makni.vercel.app",
+    url: siteUrl,
     mainEntity: personSchema,
   };
 

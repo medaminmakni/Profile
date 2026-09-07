@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Container from "@/components/layout/Container";
 import { notes } from "@/data/notes";
 import { profile } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Engineering notes",
@@ -24,14 +25,14 @@ export default function NotesIndexPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: `Engineering notes — ${profile.name}`,
-    url: "https://med-amin-makni.vercel.app/notes",
+    url: `${siteUrl}/notes`,
     author: { "@type": "Person", name: profile.name },
     blogPost: notes.map((note) => ({
       "@type": "BlogPosting",
       headline: note.title,
       description: note.summary,
       datePublished: note.date,
-      url: `https://med-amin-makni.vercel.app/notes/${note.slug}`,
+      url: `${siteUrl}/notes/${note.slug}`,
     })),
   };
 

@@ -41,7 +41,7 @@ export const profile = {
     "I turn complex AI capabilities into usable software systems—combining model pipelines, backend architecture, business rules, and human feedback around a measurable operational need.",
   links: {
     linkedin: "https://www.linkedin.com/in/makni-med-amin/",
-    github: "https://github.com/xAminxxx",
+    github: "https://github.com/medaminmakni",
   },
   cv: {
     available: true,
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "View repository",
-        href: "https://github.com/xAminxxx/smartWareHouse",
+        href: "https://github.com/medaminmakni/smartWareHouse",
         kind: "github",
       },
     ],
