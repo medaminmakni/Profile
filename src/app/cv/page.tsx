@@ -11,7 +11,7 @@ const experiences = [
   {
     role: "AI & Software Engineer — Graduation Project",
     company: "Essilor SIVO (EssilorLuxottica)",
-    period: "2026",
+    period: "Feb – Jul 2026",
     location: "Sfax, Tunisia",
     bullets: [
       "Owned requirements analysis, mobile and backend development, AI architecture, dataset preparation, model evaluation, integration, and quality assurance for confidential PRECAL form processing.",
@@ -23,7 +23,7 @@ const experiences = [
   {
     role: "Backend Developer Intern",
     company: "Altavo Partners",
-    period: "Summer 2025",
+    period: "Jun – Oct 2025",
     location: "Remote · Paris, France",
     bullets: [
       "Developed Node.js API services, PostgreSQL persistence, and Hedera SDK integration for a distributed-ledger platform.",
@@ -34,7 +34,7 @@ const experiences = [
   {
     role: "Full-Stack Developer Intern",
     company: "Infotech Consulting Services (ICS)",
-    period: "Summer 2024",
+    period: "Jun – Aug 2024",
     location: "Sfax, Tunisia",
     bullets: [
       "Developed Geex administration workflows for university schedules, examinations, students, classes, professors, and resources.",

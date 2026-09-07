@@ -100,7 +100,7 @@ export const experience = [
   {
     role: "AI & Software Engineering Graduation Project",
     company: "Essilor SIVO (EssilorLuxottica)",
-    period: "PFE · 2026",
+    period: "Feb – Jul 2026",
     location: "Sfax, Tunisia",
     mission:
       "Designed and delivered OptiFlow Precal Insight, a mobile and AI workflow for processing PRECAL optical forms.",
@@ -114,7 +114,7 @@ export const experience = [
   {
     role: "Backend Developer Intern",
     company: "Altavo Partners",
-    period: "Summer 2025",
+    period: "Jun – Oct 2025",
     location: "Remote · Paris, France",
     mission:
       "Developed backend services for a Hedera-based platform created in the context of the Hedera Africa Hackathon.",
@@ -127,7 +127,7 @@ export const experience = [
   {
     role: "Full-Stack Developer Intern",
     company: "Infotech Consulting Services (ICS)",
-    period: "Summer 2024",
+    period: "Jun – Aug 2024",
     location: "Sfax, Tunisia",
     mission:
       "Developed features for Geex, a university operations platform covering schedules, examinations, users, and resources.",
