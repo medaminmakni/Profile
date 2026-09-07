@@ -33,11 +33,15 @@ export async function generateMetadata({
       publishedTime: note.date,
       authors: [profile.name],
       tags: [...note.tags],
+      // A child route's openGraph replaces the parent's, so the generated card
+      // has to be named again here or the page ships with no og:image.
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: profile.name }],
     },
     twitter: {
       card: "summary_large_image",
       title: note.title,
       description: note.summary,
+      images: ["/opengraph-image"],
     },
   };
 }
