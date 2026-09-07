@@ -299,7 +299,10 @@ export default function Home() {
               <a href={profile.links.github} target="_blank" rel="noreferrer"><Github size={18} />GitHub</a>
               <span><MapPin size={18} />{profile.location}</span>
             </div>
-            <a className="cv-download" href={profile.cv.path} download><Mail size={17} /><span>Download professional CV</span></a>
+            <div className="cv-downloads">
+              <a className="cv-download" href={profile.cv.path} download><Mail size={17} /><span>Download CV — English</span></a>
+              <a className="cv-download" href={profile.cv.frenchPath} download hrefLang="fr"><Mail size={17} /><span>Télécharger le CV — Français</span></a>
+            </div>
           </div>
         </Container>
       </section>

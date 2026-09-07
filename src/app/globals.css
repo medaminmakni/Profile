@@ -612,3 +612,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .note-page .note-header h1 { max-width: 100%; }
 .note-body p, .note-body ul, .note-lead, .notes-lead, .note-takeaway { max-width: 100%; }
 .note-card h2 { max-width: 100%; }
+
+/* Both CV languages sit side by side in the contact block. */
+.cv-downloads { display: flex; flex-wrap: wrap; gap: .8rem; }

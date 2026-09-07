@@ -46,6 +46,7 @@ export const profile = {
   cv: {
     available: true,
     path: "/Mohamed-Amin-MAKNI-CV.pdf",
+    frenchPath: "/Mohamed-Amin-MAKNI-CV-FR.pdf",
     unavailableLabel: "Updated CV unavailable",
   },
   availability: {
