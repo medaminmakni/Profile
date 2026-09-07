@@ -27,8 +27,9 @@ export default function OptiFlowCaseStudy() {
               <h1>OptiFlow<br />Precal Insight</h1>
               <p className="case-lead">{project.summary}</p>
               <p className="confidential-notice">
-                Confidential PFE developed at Essilor SIVO (EssilorLuxottica), Sfax. Source code,
-                product screenshots, implementation artifacts, and demonstrations are not public.
+                Confidential final-year engineering project delivered at Essilor SIVO
+                (EssilorLuxottica), Sfax. Source code, product screenshots, implementation
+                artifacts, and demonstrations are not public.
               </p>
               <div className="tags">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div>
             </div>
@@ -105,6 +106,25 @@ export default function OptiFlowCaseStudy() {
         <Container className="learning-grid">
           <div><p className="eyebrow">What I learned</p><h2>Good AI engineering is system engineering.</h2></div>
           <ul>{optiFlowLearnings.map((learning) => <li key={learning}><CheckCircle2 size={18} />{learning}</li>)}</ul>
+        </Container>
+      </section>
+
+      <section className="section">
+        <Container>
+          <div className="case-section-heading">
+            <p className="eyebrow">Related writing</p>
+            <h2>The reasoning behind two of these decisions</h2>
+          </div>
+          <div className="case-related">
+            <Link href="/notes/map50-is-not-a-promise">
+              <b>mAP@50 is not a promise: reading detection metrics before you ship</b>
+              <span>Why the detector metrics above diverge, and which one predicts the outcome.</span>
+            </Link>
+            <Link href="/notes/human-in-the-loop-is-a-product-decision">
+              <b>Human-in-the-loop is a product decision, not a fallback</b>
+              <span>Designing the review step so it is faster than the process it replaced.</span>
+            </Link>
+          </div>
         </Container>
       </section>
 

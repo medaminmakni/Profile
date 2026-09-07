@@ -26,6 +26,7 @@
 .private-assets/
 Application-*.zip
 CV-En-Ahmed-Makni-1.pdf
+job-search/
 
 # debug
 npm-debug.log*

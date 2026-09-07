@@ -3,13 +3,13 @@ import { certifications, education, profile } from "@/data/portfolio";
 
 export const metadata: Metadata = {
   title: "Professional CV",
-  description: `Professional CV of ${profile.name}.`,
+  description: `Professional CV of ${profile.name}, AI Engineer.`,
   robots: { index: false, follow: false },
 };
 
 const experiences = [
   {
-    role: "AI & Software Engineering PFE",
+    role: "AI & Software Engineer — Graduation Project",
     company: "Essilor SIVO (EssilorLuxottica)",
     period: "2026",
     location: "Sfax, Tunisia",
@@ -79,6 +79,7 @@ export default function CvPage() {
             <span>{profile.location}</span>
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
             <a href={`tel:${profile.phone.replaceAll(" ", "")}`}>{profile.phone}</a>
+            <a href="https://med-amin-makni.vercel.app">med-amin-makni.vercel.app</a>
             <a href={profile.links.linkedin}>linkedin.com/in/makni-med-amin</a>
             <a href={profile.links.github}>github.com/xAminxxx</a>
           </address>
@@ -86,11 +87,19 @@ export default function CvPage() {
 
         <section className="cv-summary">
           <h2>Profile</h2>
-          <p>
-            AI Engineer and Software Engineer building complete intelligent applications across
-            computer vision, document AI, RAG, and agent systems. Experienced across dataset
-            preparation, model evaluation, backend integration, business validation, and software delivery.
-          </p>
+          <div>
+            <p>
+              AI Engineer and Software Engineer who builds intelligent applications that have to be
+              right in operation, not only in evaluation. I work across the full path—dataset
+              preparation, model training and evaluation, backend and API integration, business
+              validation rules, and human review paths—so that model output becomes data a business
+              can act on. Specialised in computer vision, document intelligence, RAG, and agent systems.
+            </p>
+            <p className="cv-availability">
+              <b>Open to full-time roles:</b> AI Engineer · Applied AI / ML Engineer · Computer Vision
+              Engineer · Generative AI Engineer. Remote, hybrid, or relocation. Available immediately.
+            </p>
+          </div>
         </section>
 
         <section className="cv-section">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { profile } from "@/data/portfolio";
 
@@ -59,6 +60,9 @@ export default function Header() {
               {label}
             </a>
           ))}
+          <Link href="/notes" onClick={() => setMenuOpen(false)}>
+            Notes
+          </Link>
           {profile.cv.available ? (
             <a className="cv-link" href={profile.cv.path} download>
               Download CV

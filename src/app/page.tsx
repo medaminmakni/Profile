@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Container from "@/components/layout/Container";
 import ProjectVisual from "@/components/ProjectVisual";
+import { notes } from "@/data/notes";
 import {
   approach,
   certifications,
@@ -37,13 +38,50 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
-    jobTitle: "Software Engineer",
+    givenName: "Mohamed Amin",
+    familyName: "MAKNI",
+    jobTitle: "AI Engineer",
+    description: profile.biography,
     address: { "@type": "PostalAddress", addressLocality: "Sfax", addressCountry: "TN" },
     email: `mailto:${profile.email}`,
+    telephone: profile.phone,
     url: "https://med-amin-makni.vercel.app",
     image: "https://med-amin-makni.vercel.app/images/profile.jpg",
     sameAs: [profile.links.linkedin, profile.links.github],
-    knowsAbout: ["Artificial intelligence", "Computer vision", "Document intelligence", "RAG", "Large language models", "Intelligent agents", "Software architecture"],
+    alumniOf: education.map((item) => ({
+      "@type": "CollegeOrUniversity",
+      name: item.institution,
+      address: { "@type": "PostalAddress", addressLocality: "Sfax", addressCountry: "TN" },
+    })),
+    hasCredential: certifications.map((item) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: item.title,
+      credentialCategory: "certification",
+      recognizedBy: { "@type": "Organization", name: item.issuer },
+    })),
+    seeks: profile.availability.roles.map((role) => ({
+      "@type": "Demand",
+      name: role,
+      availableAtOrFrom: {
+        "@type": "Place",
+        address: { "@type": "PostalAddress", addressLocality: "Sfax", addressCountry: "TN" },
+      },
+    })),
+    knowsLanguage: ["Arabic", "English", "French"],
+    knowsAbout: [
+      "Artificial intelligence",
+      "Computer vision",
+      "Document intelligence",
+      "Optical character recognition",
+      "Retrieval-augmented generation",
+      "Large language models",
+      "Intelligent agents",
+      "Model evaluation",
+      "Human-in-the-loop systems",
+      "Python",
+      "FastAPI",
+      "Software architecture",
+    ],
   };
 
   const profilePageSchema = {
@@ -75,6 +113,18 @@ export default function Home() {
               <a href={profile.links.github} target="_blank" rel="noreferrer"><Github size={17} /> GitHub</a>
               <span><MapPin size={17} /> {profile.location}</span>
             </div>
+            {profile.availability.open ? (
+              <div className="availability-strip" role="status">
+                <span className="availability-dot" aria-hidden="true" />
+                <div>
+                  <b>{profile.availability.status}</b>
+                  <span>
+                    {profile.availability.roles.slice(0, 3).join(" · ")} —{" "}
+                    {profile.availability.arrangements}. {profile.availability.startNote}.
+                  </span>
+                </div>
+              </div>
+            ) : null}
             <div className="hero-proof" aria-label="Primary engineering focus">
               <div><span>01</span><b>Applied AI</b><small>Vision · OCR · Evaluation</small></div>
               <div><span>02</span><b>Generative AI</b><small>RAG · LLMs · Agents</small></div>
@@ -207,11 +257,42 @@ export default function Home() {
         </Container>
       </section>
 
+      <section className="section muted-section" id="notes">
+        <Container>
+          <SectionHeading
+            eyebrow="07 / Engineering notes"
+            title="How I think about building these systems"
+            description="Short write-ups on evaluating document-AI pipelines, designing review steps people can use, and what I would do differently next time."
+          />
+          <div className="notes-teaser">
+            {notes.slice(0, 3).map((note) => (
+              <article key={note.slug}>
+                <div className="note-card-meta">
+                  <time dateTime={note.date}>{note.displayDate}</time>
+                  <span>{note.readingTime}</span>
+                </div>
+                <h3>
+                  <Link href={`/notes/${note.slug}`}>{note.title}</Link>
+                </h3>
+                <p>{note.summary}</p>
+              </article>
+            ))}
+          </div>
+          <Link className="text-link" href="/notes">
+            Read all notes <ArrowRight size={17} />
+          </Link>
+        </Container>
+      </section>
+
       <section className="contact-section" id="contact">
         <Container className="contact-inner">
-          <div><p className="eyebrow">07 / Contact</p><h2>Let’s build systems that are ready to operate.</h2></div>
+          <div><p className="eyebrow">08 / Contact</p><h2>Let’s build systems that are ready to operate.</h2></div>
           <div className="contact-copy">
             <p>For AI engineering, computer vision, RAG, intelligent-agent, backend, or software architecture opportunities, reach me directly.</p>
+            <p className="availability-detail">
+              <b>{profile.availability.status}:</b> {profile.availability.roles.join(", ")}.{" "}
+              {profile.availability.arrangements}. Considering {profile.availability.regions}.
+            </p>
             <a className="contact-email" href={`mailto:${profile.email}`}>{profile.email}<ArrowRight size={22} /></a>
             <div className="contact-links">
               <a href={profile.links.linkedin} target="_blank" rel="noreferrer"><Linkedin size={18} />LinkedIn</a>

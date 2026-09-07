@@ -421,3 +421,185 @@ button, a { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- Availability signal ---------- */
+.availability-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  margin: 1.9rem 0 0;
+  padding: .95rem 1.15rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--accent-soft);
+}
+.availability-strip > div { display: flex; flex-direction: column; gap: .2rem; }
+.availability-strip b { font-size: .86rem; font-weight: 800; letter-spacing: .01em; color: var(--text); }
+.availability-strip span { font-size: .84rem; color: var(--muted); line-height: 1.5; }
+.availability-dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin-top: .45rem;
+  border-radius: 999px;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-2) 22%, transparent);
+}
+.availability-detail {
+  margin-top: .3rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+.availability-detail b { color: var(--text); }
+
+/* ---------- Notes teaser on the home page ---------- */
+.notes-teaser {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.6rem;
+}
+.notes-teaser article {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  padding: 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-elevated);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.notes-teaser article:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.notes-teaser h3 { margin: 0; font-size: 1.06rem; line-height: 1.35; letter-spacing: -.01em; }
+.notes-teaser h3 a:hover { color: var(--accent); }
+.notes-teaser p { margin: 0; font-size: .88rem; color: var(--muted); line-height: 1.6; }
+
+.note-card-meta {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.note-card-meta span::before { content: "· "; }
+
+/* ---------- Notes index ---------- */
+.notes-hero { padding-top: 11rem; border-top: 0; }
+.notes-hero h1 {
+  margin: 0 0 1.4rem;
+  max-width: 20ch;
+  font-size: clamp(2.4rem, 5.4vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+.notes-lead { max-width: 62ch; margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+.notes-list-section { padding-top: 3.5rem; }
+.notes-list { display: flex; flex-direction: column; gap: 1.4rem; }
+.note-card {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-elevated);
+  transition: border-color .25s ease;
+}
+.note-card:hover { border-color: var(--line-strong); }
+.note-card h2 { margin: 0; font-size: 1.45rem; line-height: 1.25; letter-spacing: -.02em; max-width: 34ch; }
+.note-card h2 a:hover { color: var(--accent); }
+.note-card > p { margin: 0; max-width: 70ch; color: var(--muted); line-height: 1.7; }
+
+/* ---------- Single note ---------- */
+.note-header { padding-top: 10rem; padding-bottom: 2.5rem; border-top: 0; }
+.note-header .back-link { margin-bottom: 2rem; }
+.note-header h1 {
+  margin: .9rem 0 1.5rem;
+  max-width: 22ch;
+  font-size: clamp(2.1rem, 4.8vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+.note-lead {
+  max-width: 68ch;
+  margin: 0 0 1.6rem;
+  color: var(--text);
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+.note-body { padding-top: 1rem; padding-bottom: 4rem; border-top: 1px solid var(--line); }
+.note-body section { margin-bottom: 3rem; }
+.note-body h2 {
+  margin: 0 0 1rem;
+  max-width: 30ch;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+.note-body p { max-width: 70ch; margin: 0 0 1.15rem; color: var(--muted); font-size: 1.02rem; line-height: 1.8; }
+.note-body ul { max-width: 70ch; margin: 0; padding-left: 0; list-style: none; }
+.note-body li {
+  position: relative;
+  margin-bottom: .7rem;
+  padding-left: 1.5rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.note-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .68rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+.note-takeaway {
+  max-width: 70ch;
+  padding: 1.6rem 1.8rem;
+  border: 1px solid var(--line-strong);
+  border-left-width: 3px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+}
+.note-takeaway .eyebrow { margin-bottom: .5rem; }
+.note-takeaway p:last-child { margin: 0; color: var(--text); font-size: 1.02rem; line-height: 1.7; }
+.note-footer { padding: 3rem 0 5rem; }
+.note-footer-inner { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: space-between; }
+.note-footer-inner .text-link { max-width: 42ch; }
+
+@media (max-width: 900px) {
+  .notes-teaser { grid-template-columns: 1fr; }
+  .notes-hero, .note-header { padding-top: 8rem; }
+  .note-card { padding: 1.5rem; }
+  .note-footer-inner { flex-direction: column; gap: 1.8rem; }
+}
+
+/* ---------- CV availability line ---------- */
+.cv-summary > div { display: grid; gap: .4rem; }
+.cv-availability { margin: 0; color: #486478; font-size: .68rem; }
+.cv-availability b { color: #147ca8; }
+
+/* ---------- Case study: related notes ---------- */
+.case-related { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+.case-related a {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1.5rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.case-related a:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.case-related b { font-size: 1.02rem; font-weight: 700; line-height: 1.35; letter-spacing: -.01em; }
+.case-related span { color: var(--muted); font-size: .89rem; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .case-related { grid-template-columns: 1fr; }
+}

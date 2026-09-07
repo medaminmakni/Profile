@@ -28,8 +28,9 @@ export type Project = {
 export const profile = {
   name: "Mohamed Amin MAKNI",
   monogram: "MAM",
-  headline: "AI Engineer building intelligent systems that work in practice",
-  shortHeadline: "AI Engineer · Computer Vision · RAG & Intelligent Agents",
+  headline:
+    "AI Engineer building document intelligence, computer vision, and RAG systems that hold up outside the notebook",
+  shortHeadline: "AI Engineer · Computer Vision · Document Intelligence · RAG & Agents",
   location: "Sfax, Tunisia",
   email: "mki.medamin@gmail.com",
   phone: "+216 52 855 085",
@@ -47,28 +48,41 @@ export const profile = {
     path: "/Mohamed-Amin-MAKNI-CV.pdf",
     unavailableLabel: "Updated CV unavailable",
   },
+  availability: {
+    open: true,
+    status: "Open to full-time roles",
+    roles: [
+      "AI Engineer",
+      "Applied AI / Machine Learning Engineer",
+      "Computer Vision Engineer",
+      "Generative AI / RAG Engineer",
+    ],
+    arrangements: "Remote · Hybrid · Open to relocation",
+    regions: "Tunisia · European Union · United Kingdom · UAE · Remote",
+    startNote: "Available immediately",
+  },
 } as const;
 
 export const expertise = [
   {
     title: "Applied AI Engineering",
     focus: "Model pipelines designed around measurable application outcomes",
-    skills: ["PyTorch", "TensorFlow", "YOLO", "OCR", "Model evaluation"],
+    skills: ["Python", "PyTorch", "TensorFlow", "YOLO", "OCR", "Model evaluation"],
   },
   {
     title: "Generative AI Systems",
     focus: "Grounded AI workflows for retrieval, reasoning, and assistance",
-    skills: ["RAG", "LLMs", "Intelligent agents", "Human-in-the-loop"],
+    skills: ["RAG", "LLMs", "Intelligent agents", "Vector search", "Human-in-the-loop"],
   },
   {
     title: "Computer Vision & Documents",
     focus: "Detection, recognition, classification, and validation workflows",
-    skills: ["YOLO", "TrOCR", "GLM-OCR", "EfficientNet", "RapidFuzz"],
+    skills: ["YOLO11", "TrOCR", "GLM-OCR", "EfficientNetV2", "RapidFuzz"],
   },
   {
     title: "Backend & Architecture",
     focus: "Maintainable APIs, services, data flows, and integration boundaries",
-    skills: ["Python", "FastAPI", "Node.js", "REST APIs", "PostgreSQL", "MySQL"],
+    skills: ["FastAPI", "Node.js", "REST APIs", "PostgreSQL", "MySQL", "MongoDB"],
   },
   {
     title: "AI Software Delivery",
