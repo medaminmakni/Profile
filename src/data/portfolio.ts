@@ -249,6 +249,12 @@ export const certifications = [
     score: "889 / 1000",
   },
   {
+    title: "Hashgraph Developer",
+    issuer: "The Hashgraph Association",
+    year: "June 2025",
+    score: "",
+  },
+  {
     title: "Information Technology Specialist — Python",
     issuer: "Certiport",
     year: "27 March 2024",

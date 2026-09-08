@@ -163,7 +163,7 @@ export default function CvPage() {
             <h2>Certifications</h2>
             <div>
               {certifications.map((item) => (
-                <article key={item.title}><h3>{item.title}</h3><p>{item.issuer} · {item.year} · {item.score}</p></article>
+                <article key={item.title}><h3>{item.title}</h3><p>{item.issuer} · {item.year}{item.score ? ` · ${item.score}` : ""}</p></article>
               ))}
             </div>
           </section>

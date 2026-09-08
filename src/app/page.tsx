@@ -251,7 +251,7 @@ export default function Home() {
             <div>
               <p className="column-label">Certifications</p>
               {certifications.map((item) => (
-                <article className="credential" key={item.title}><p>{item.year}</p><h3>{item.title}</h3><span>{item.issuer} · Score {item.score}</span></article>
+                <article className="credential" key={item.title}><p>{item.year}</p><h3>{item.title}</h3><span>{item.issuer}{item.score ? ` · Score ${item.score}` : ""}</span></article>
               ))}
             </div>
           </div>

@@ -618,3 +618,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 /* Both CV languages sit side by side in the contact block. */
 .cv-downloads { display: flex; flex-wrap: wrap; gap: .8rem; }
+
+/* Three certifications now, so the CV block runs in three columns. */
+.cv-certifications > div { grid-template-columns: repeat(3, 1fr); }
