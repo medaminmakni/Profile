@@ -203,7 +203,7 @@ export default function Home() {
 
       <section className="section projects-section" id="projects">
         <Container>
-          <SectionHeading eyebrow="04 / Selected work" title="Proof through engineering decisions" description="Three projects selected for relevance, architectural depth, and available evidence." />
+          <SectionHeading eyebrow="04 / Selected work" title="Proof through engineering decisions" description="Selected for relevance, architectural depth, and evidence I can show." />
           <div className="projects-list">
             {projects.map((project, index) => (
               <article className={`project-row ${index === 0 ? "project-row-featured" : ""}`} key={project.slug}>
