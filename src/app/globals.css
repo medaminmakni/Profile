@@ -212,8 +212,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .confidence-card span { color: #94a7bd; font-size: .65rem; }
 .warehouse-grid { position: absolute; inset: 18%; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
 .warehouse-grid span { z-index: 1; display: grid; place-items: center; border: 1px solid rgba(94,234,212,.48); background: #0d2030; color: var(--accent-2); font: 700 .75rem ui-monospace, monospace; }
-.warehouse-visual svg, .classroom-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.warehouse-visual path, .classroom-visual path { fill: none; stroke: rgba(84,199,255,.38); stroke-width: 1.5; }
+.warehouse-visual svg, .classroom-visual svg, .agent-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.warehouse-visual path, .classroom-visual path, .agent-visual path, .agent-visual rect { fill: none; stroke: rgba(84,199,255,.38); stroke-width: 1.5; }
 .classroom-visual circle { fill: #0b1c2c; stroke: #54c7ff; stroke-width: 2; }
 .ledger-label { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); padding: .7rem 1rem; background: #0c1c2a; color: var(--accent); border: 1px solid var(--line-strong); font: 700 .7rem ui-monospace, monospace; letter-spacing: .12em; }
 
@@ -621,3 +621,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 /* Three certifications now, so the CV block runs in three columns. */
 .cv-certifications > div { grid-template-columns: repeat(3, 1fr); }
+
+/* Project screenshot strip (used where real product screens exist) */
+.project-screens { position: relative; min-height: 420px; background: #081421; border-left: 1px solid var(--line); overflow: hidden; display: flex; align-items: center; }
+.project-screens::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(84,199,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(84,199,255,.07) 1px, transparent 1px); background-size: 36px 36px; pointer-events: none; }
+.project-screens ul { position: relative; z-index: 1; display: flex; gap: 1.1rem; margin: 0; padding: 2rem 1.6rem; list-style: none; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+.project-screens ul::-webkit-scrollbar { height: 6px; }
+.project-screens ul::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+.project-screens li { flex: 0 0 auto; width: 156px; scroll-snap-align: center; display: flex; flex-direction: column; gap: .7rem; }
+.project-screens img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-strong); background: #0d0d0d; box-shadow: 0 18px 44px rgba(0,0,0,.45); }
+.project-screens span { color: #94a7bd; font-size: .66rem; line-height: 1.45; letter-spacing: .01em; }
+.project-screens::after { content: ""; position: absolute; z-index: 2; top: 0; right: 0; width: 46px; height: 100%; background: linear-gradient(90deg, rgba(8,20,33,0), rgba(8,20,33,.92)); pointer-events: none; }
+@media (max-width: 900px) {
+  .project-screens { border-left: 0; border-top: 1px solid var(--line); min-height: unset; }
+}
+@media (max-width: 640px) {
+  .project-screens li { width: 146px; }
+}

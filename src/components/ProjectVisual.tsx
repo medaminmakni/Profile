@@ -1,5 +1,5 @@
 type ProjectVisualProps = {
-  variant: "optiflow" | "warehouse" | "classroom";
+  variant: "optiflow" | "warehouse" | "classroom" | "agent";
 };
 
 export default function ProjectVisual({ variant }: ProjectVisualProps) {
@@ -16,6 +16,19 @@ export default function ProjectVisual({ variant }: ProjectVisualProps) {
         <div className="scan-line" />
         <div className="model-node">AI</div>
         <div className="confidence-card"><b>95.16%</b><span>mAP@50</span></div>
+      </div>
+    );
+  }
+
+  if (variant === "agent") {
+    return (
+      <div className="project-visual agent-visual" aria-label="Model provider abstraction illustration" role="img">
+        <svg viewBox="0 0 420 220" aria-hidden="true">
+          <path d="M40 110H130M290 74H380M290 146H380" />
+          <rect x="130" y="72" width="160" height="76" rx="8" />
+          <path d="M210 72V148M170 92h80M170 128h80" />
+        </svg>
+        <span className="ledger-label">ONE INTERFACE · TWO ADAPTERS</span>
       </div>
     );
   }

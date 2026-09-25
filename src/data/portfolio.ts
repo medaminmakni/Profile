@@ -10,6 +10,12 @@ export type Metric = {
   note?: string;
 };
 
+export type Screen = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -20,25 +26,26 @@ export type Project = {
   contribution: string[];
   technologies: string[];
   metrics?: Metric[];
+  screens?: Screen[];
   links: Link[];
   featured: boolean;
-  status: "case-study" | "public-repository" | "project-summary";
+  status: "case-study" | "public-repository" | "project-summary" | "private-repository" | "in-progress";
 };
 
 export const profile = {
   name: "Mohamed Amin MAKNI",
   monogram: "MAM",
   headline:
-    "AI Engineer building document intelligence, computer vision, and RAG systems that hold up outside the notebook",
+    "AI Engineer building systems that have to be right in operation, not only in evaluation",
   shortHeadline: "AI Engineer · Computer Vision · Document Intelligence · RAG & Agents",
   location: "Sfax, Tunisia",
   email: "mki.medamin@gmail.com",
   phone: "+216 52 855 085",
   portrait: "/images/profile.jpg",
   biography:
-    "AI Engineer and Software Engineer focused on computer vision, document intelligence, RAG, LLMs, and intelligent agents. I design complete AI-enabled applications—from datasets and model evaluation to backend integration, human validation, and reliable delivery.",
+    "AI Engineer working across computer vision, document intelligence, RAG and agent systems. I work the full path — dataset preparation, model training and evaluation, backend and API integration, business rules, and the human review paths that catch what the model gets wrong. I also ship complete products: Fytrak is a three-role coaching platform I built end to end, alone.",
   valueProposition:
-    "I turn complex AI capabilities into usable software systems—combining model pipelines, backend architecture, business rules, and human feedback around a measurable operational need.",
+    "A model that scores well and a system a team can rely on are different things. I build the second, and I test the parts that decide whether it can be trusted.",
   links: {
     linkedin: "https://www.linkedin.com/in/makni-med-amin/",
     github: "https://github.com/medaminmakni",
@@ -52,12 +59,7 @@ export const profile = {
   availability: {
     open: true,
     status: "Open to full-time roles",
-    roles: [
-      "AI Engineer",
-      "Applied AI / Machine Learning Engineer",
-      "Computer Vision Engineer",
-      "Generative AI / RAG Engineer",
-    ],
+    roles: ["AI Engineer", "Applied AI / Machine Learning Engineer"],
     arrangements: "Remote · Hybrid · Open to relocation",
     regions: "Tunisia · European Union · United Kingdom · UAE · Remote",
     startNote: "Available immediately",
@@ -99,7 +101,7 @@ export const expertise = [
 
 export const experience = [
   {
-    role: "AI & Software Engineering Graduation Project",
+    role: "AI & Software Engineer — Final-Year Engineering Project",
     company: "Essilor SIVO (EssilorLuxottica)",
     period: "Feb – Jul 2026",
     location: "Sfax, Tunisia",
@@ -149,6 +151,73 @@ export const optiFlowMetrics: Metric[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "fytrak",
+    title: "Fytrak",
+    eyebrow: "Personal project · Shipped solo · Mobile platform",
+    summary:
+      "A three-role coaching platform — trainee, coach, admin — built end to end on my own: mobile app, admin console, cloud backend.",
+    role: "Sole engineer, end to end",
+    challenge:
+      "Give a coach and their client one place to run a programme together, with an access model strict enough that neither can see what the other should not.",
+    contribution: [
+      "React Native app for both trainee and coach",
+      "Admin web console for coach verification and moderation",
+      "Fifteen Cloud Functions: assignment lifecycle, write-time aggregation, scheduled reporting, subscription webhook",
+      "698 lines of Firestore security rules, with a test suite that runs them against the emulator",
+      "English, French and Arabic including right-to-left layout",
+    ],
+    technologies: [
+      "TypeScript",
+      "React Native (Expo)",
+      "Firebase",
+      "Cloud Functions",
+      "Firestore",
+      "i18n / RTL",
+    ],
+    metrics: [
+      { label: "Roles", value: "3", note: "Trainee, coach, administrator" },
+      { label: "Cloud Functions", value: "15", note: "Callable, triggered, scheduled and webhook" },
+      { label: "Security rules", value: "698 lines", note: "Covered by an emulator test suite" },
+    ],
+    screens: [
+      {
+        src: "/images/fytrak/today.webp",
+        alt: "Fytrak trainee home screen showing a pending coach request and the day's calorie and protein targets",
+        caption: "Trainee home — targets, and a coach request still pending",
+      },
+      {
+        src: "/images/fytrak/coach-marketplace.webp",
+        alt: "Fytrak coach directory listing coaches with specialisms, ratings and client counts",
+        caption: "Trainees browse coaches and send a request",
+      },
+      {
+        src: "/images/fytrak/pr-detected.webp",
+        alt: "Fytrak workout logging screen with a personal-record notification derived from the logged sets",
+        caption: "A PR is derived from the logged sets, not entered by hand",
+      },
+      {
+        src: "/images/fytrak/meal-log.webp",
+        alt: "Fytrak meal search showing Tunisian dishes with Arabic names and calorie values",
+        caption: "Meal logging on a Tunisian food database",
+      },
+      {
+        src: "/images/fytrak/coach-assign.webp",
+        alt: "Fytrak coach view confirming that a prescribed workout has been assigned to a client's day",
+        caption: "Coach side — a prescription lands in the client's day",
+      },
+      {
+        src: "/images/fytrak/coach-daily-report.webp",
+        alt: "Fytrak coach reading a client's daily report with nutrition summary and completed session",
+        caption: "and the coach reads back what actually happened",
+      },
+    ],
+    links: [
+      { label: "Source on GitHub", href: "https://github.com/medaminmakni/Fytrak", kind: "github" },
+    ],
+    featured: true,
+    status: "public-repository",
+  },
   {
     slug: "optiflow-precal-insight",
     title: "OptiFlow Precal Insight",
@@ -205,6 +274,26 @@ export const projects: Project[] = [
     status: "public-repository",
   },
   {
+    slug: "orys-ai-layer",
+    title: "ORYS — AI layer",
+    eyebrow: "Team of 4 · In progress · Agent infrastructure",
+    summary:
+      "The model and agent layer of a multi-tenant business platform. I am responsible for this layer; the platform is built by a team of four.",
+    role: "Responsible for the AI layer",
+    challenge:
+      "Let an assistant take real actions inside a business system without ever becoming a privileged database user, and without depending on a single model vendor.",
+    contribution: [
+      "Model-provider abstraction: one interface, two adapters — OpenAI-compatible (Ollama, OpenAI, OpenRouter) and Anthropic Messages",
+      "Both adapters derived from the vendors' published SDK types rather than their documentation, which exposed three defects the existing tests all passed — two would have reached production",
+      "Agent tools that each wrap one API call as the acting user: no database credential, no SQL, so every action inherits that user's permissions and audit trail",
+      "Token and cost accounting normalised across providers",
+    ],
+    technologies: ["TypeScript", "Anthropic SDK", "OpenAI SDK", "Zod", "Vitest", "NestJS"],
+    links: [],
+    featured: true,
+    status: "in-progress",
+  },
+  {
     slug: "intelligent-online-classroom",
     title: "Intelligent Online Classroom",
     eyebrow: "Multimodal AI · Learning analytics",
@@ -221,7 +310,7 @@ export const projects: Project[] = [
     ],
     technologies: ["Angular", "Python", "YOLO", "TensorFlow", "NLP", "Computer Vision"],
     links: [],
-    featured: true,
+    featured: false,
     status: "project-summary",
   },
 ];
@@ -234,8 +323,8 @@ export const education = [
     status: "Software Engineering & Business Intelligence",
   },
   {
-    degree: "Engineering Preparatory Program",
-    institution: "Engineering Preparatory Institute of Sfax (IPEIS)",
+    degree: "Preparatory Classes for Engineering Schools",
+    institution: "Preparatory Institute for Engineering Studies of Sfax (IPEIS)",
     location: "Sfax, Tunisia",
     status: "Completed · 2021–2023",
   },

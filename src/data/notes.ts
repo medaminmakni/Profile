@@ -19,6 +19,64 @@ export type Note = {
 
 export const notes: Note[] = [
   {
+    slug: "an-agent-should-never-confirm-its-own-action",
+    title: "An agent should never confirm its own action",
+    summary:
+      "The party that proposes an action and the party that confirms it must never be the same principal. Not a different prompt \u2014 a different principal.",
+    date: "2026-09-25",
+    displayDate: "25 September 2026",
+    readingTime: "5 min read",
+    tags: ["AI agents", "System design", "LLM infrastructure"],
+    intro:
+      "There is a line most people cross without noticing. On one side, a model answers questions. On the other, it does things \u2014 creates the invoice, sends the message, changes the price. The interface looks the same. The failure modes are not. I hit this line building the AI layer of a business platform, and the rule I ended up with is narrow enough to state in one sentence.",
+    sections: [
+      {
+        heading: "What self-approval looks like",
+        paragraphs: [
+          "The seductive version goes like this. The agent decides an action is needed. It has a confirmation step, so it presents the action, evaluates its own proposal against the user's intent, judges it consistent, and proceeds. One round trip, a smooth experience, a result.",
+          "Everything in that paragraph is reasonable except the word own. The model that decided the action is the model that judged the decision. If the reasoning that produced the action was wrong, the reasoning that reviews it is wrong in the same direction \u2014 it shares the premises, the context window and the mistake. You have not added a check. You have added a second opinion from the same opinion.",
+          "This is not a property of weak models. A better model fails the same way, just less often and more convincingly, which is worse: rare failures that read as confident are the ones that reach production.",
+        ],
+      },
+      {
+        heading: "Authorization is not a question for a person",
+        paragraphs: [
+          "If the approval gate comes first, you end up asking a human to confirm an action the actor was never permitted to take \u2014 and a human who is asked to approve twenty things a day will eventually approve that one. Whether the acting user is allowed to do something is a fact about the system. It should be settled before a person is involved, not delegated to their attention.",
+        ],
+      },
+      {
+        heading: "Deciding what counts as high-risk",
+        paragraphs: [
+          "The rule is only useful if the classification is honest, and the temptation is to classify almost nothing as high-risk, because every gate costs a round trip and the demo feels slower.",
+          "The test I use is not about money. It is whether the person about to be affected can undo this before it matters. Adjusting a draft is reversible. Posting to a closed accounting period is not. Sending a message to a customer is not \u2014 you can delete it from your side, but they have already read it. Reversibility, not amount, separates the two lists.",
+        ],
+      },
+      {
+        heading: "The agent is a client, not a database user",
+        paragraphs: [
+          "In the layer I built, a tool is one API call and nothing more. The agent never sees SQL and never holds a database credential. Each tool maps onto a single call made as the acting user, so it inherits that user's permissions, tenant scoping, validation and audit trail \u2014 the same path as a human clicking the button.",
+          "The related mistake is letting the model write the query. It demos impressively and it is the wrong shape: a model writing SQL over a business schema is a model inventing joins, and a wrong number that looks right is more dangerous than an error. An error stops someone. A plausible number gets pasted into a report.",
+        ],
+      },
+      {
+        heading: "Where this comes from",
+        paragraphs: [
+          "I did not arrive at this from reading about AI safety. I arrived at it from a document-processing pipeline I built during my final-year project. The models were good \u2014 the detector hit 95% mAP@50. The decision that actually shaped the product was not the architecture. It was the confidence threshold below which a form stops being processed automatically and goes to a person.",
+          "Set it too low and you send humans work the machine could have done. Set it too high and wrong data enters the system silently, which is the expensive failure, because nobody is looking for it. A system that fails silently is more dangerous than one that asks for confirmation. Once you have seen that in a vision pipeline, you see it everywhere.",
+        ],
+      },
+      {
+        heading: "What I have not solved",
+        paragraphs: [
+          "Approval fatigue is real and I do not have a good answer. A human who confirms forty actions a day is a rubber stamp with a login, and every gate you add makes that more likely. Batching helps, risk-tiering helps, but neither makes the problem go away \u2014 it converts a technical control into a question about attention, and attention does not scale.",
+          "I also do not know where the line sits for autonomous background work, where there is no human in the session at all. The honest answer today is that the actions I let run unattended are the reversible ones, and that is a limitation, not a design.",
+        ],
+      },
+    ],
+    takeaway:
+      "Separate the principal that proposes from the principal that confirms, settle authorization before you spend a human's attention, and classify risk by reversibility rather than by amount.",
+  },
+  {
     slug: "map50-is-not-a-promise",
     title: "mAP@50 is not a promise: reading detection metrics before you ship",
     summary:

@@ -24,6 +24,13 @@ import {
   projects,
 } from "@/data/portfolio";
 
+const projectVisuals: Record<string, "optiflow" | "warehouse" | "classroom" | "agent"> = {
+  "optiflow-precal-insight": "optiflow",
+  "smartwarehouse-ai": "warehouse",
+  "orys-ai-layer": "agent",
+  "intelligent-online-classroom": "classroom",
+};
+
 function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
   return (
     <div className="section-heading">
@@ -220,7 +227,21 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-                <ProjectVisual variant={index === 0 ? "optiflow" : index === 1 ? "warehouse" : "classroom"} />
+                {project.screens ? (
+                  <div className="project-screens" aria-label={`${project.title} screenshots`}>
+                    <ul>
+                      {project.screens.map((screen) => (
+                        <li key={screen.src}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={screen.src} alt={screen.alt} width={560} height={1212} loading="lazy" decoding="async" />
+                          <span>{screen.caption}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <ProjectVisual variant={projectVisuals[project.slug] ?? "optiflow"} />
+                )}
               </article>
             ))}
           </div>
