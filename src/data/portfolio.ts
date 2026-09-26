@@ -276,7 +276,9 @@ export const projects: Project[] = [
       { label: "Release", value: "2 tranches", note: "On shipment, then on delivery" },
       { label: "Audit trail", value: "HCS", note: "Every state change, immutable" },
     ],
-    links: [],
+    links: [
+      { label: "Watch the demo", href: "https://www.youtube.com/watch?v=F2wRcFhlHmg", kind: "demo" },
+    ],
     featured: false,
     status: "project-summary",
   },
