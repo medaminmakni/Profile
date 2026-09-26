@@ -24,8 +24,9 @@ import {
   projects,
 } from "@/data/portfolio";
 
-const projectVisuals: Record<string, "optiflow" | "warehouse" | "classroom" | "agent"> = {
+const projectVisuals: Record<string, "optiflow" | "warehouse" | "classroom" | "agent" | "escrow"> = {
   "optiflow-precal-insight": "optiflow",
+  "hex-port": "escrow",
   "smartwarehouse-ai": "warehouse",
   "orys-ai-layer": "agent",
   "intelligent-online-classroom": "classroom",

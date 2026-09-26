@@ -120,12 +120,13 @@ export const experience = [
     period: "Jun – Oct 2025",
     location: "Remote · Paris, France",
     mission:
-      "Developed backend services for a Hedera-based platform created in the context of the Hedera Africa Hackathon.",
+      "Built the bank and arbiter side of Hex-Port, a Hedera trade-finance platform for African exporters, in a team of five.",
     highlights: [
-      "Implemented API services and integrated the Hedera SDK.",
-      "Worked with PostgreSQL persistence and Docker-based environments.",
+      "The bank service and its REST controllers: KYC review, document validation, dispute handling and order approvals.",
+      "The approvals that release escrowed payment in two tranches, on shipment and on delivery.",
+      "Cookie-based bank authentication, the order workflow, and the merge of two divergent branches into the build that shipped.",
     ],
-    technologies: ["Node.js", "PostgreSQL", "Docker", "Hedera SDK"],
+    technologies: ["TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "Hedera SDK", "Solidity"],
   },
   {
     role: "Full-Stack Developer Intern",
@@ -246,6 +247,38 @@ export const projects: Project[] = [
     links: [],
     featured: true,
     status: "case-study",
+  },
+  {
+    slug: "hex-port",
+    title: "Hex-Port",
+    eyebrow: "Altavo Partners · Team of five · Blockchain trade finance",
+    summary:
+      "A trade-finance platform for African exporters where a bank arbitrates a three-party escrow on Hedera, and every state change is written to an immutable audit trail.",
+    role: "Bank and arbiter side, end to end",
+    challenge:
+      "A buyer will not pay before shipment and a seller will not ship before payment. Put a bank in the middle, and the software has to be trustworthy enough that neither side has to trust the other.",
+    contribution: [
+      "The bank service: KYC review, document validation, dispute handling, order approvals",
+      "Cookie-based bank authentication and its REST controllers",
+      "The approvals that release escrowed payment in two tranches, on shipment and on delivery — the functions the Solidity contract gates behind onlyArbiter",
+      "Merged two divergent feature branches into the build that shipped",
+    ],
+    technologies: [
+      "TypeScript",
+      "Node.js / Express",
+      "Prisma",
+      "PostgreSQL",
+      "Hedera SDK",
+      "Solidity",
+    ],
+    metrics: [
+      { label: "Parties", value: "3", note: "Buyer, seller, bank as arbiter" },
+      { label: "Release", value: "2 tranches", note: "On shipment, then on delivery" },
+      { label: "Audit trail", value: "HCS", note: "Every state change, immutable" },
+    ],
+    links: [],
+    featured: false,
+    status: "project-summary",
   },
   {
     slug: "smartwarehouse-ai",

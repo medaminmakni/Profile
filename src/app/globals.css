@@ -212,8 +212,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .confidence-card span { color: #94a7bd; font-size: .65rem; }
 .warehouse-grid { position: absolute; inset: 18%; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
 .warehouse-grid span { z-index: 1; display: grid; place-items: center; border: 1px solid rgba(94,234,212,.48); background: #0d2030; color: var(--accent-2); font: 700 .75rem ui-monospace, monospace; }
-.warehouse-visual svg, .classroom-visual svg, .agent-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.warehouse-visual path, .classroom-visual path, .agent-visual path, .agent-visual rect { fill: none; stroke: rgba(84,199,255,.38); stroke-width: 1.5; }
+.warehouse-visual svg, .classroom-visual svg, .agent-visual svg, .escrow-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.warehouse-visual path, .classroom-visual path, .agent-visual path, .agent-visual rect, .escrow-visual path, .escrow-visual rect { fill: none; stroke: rgba(84,199,255,.38); stroke-width: 1.5; }
 .classroom-visual circle { fill: #0b1c2c; stroke: #54c7ff; stroke-width: 2; }
 .ledger-label { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); padding: .7rem 1rem; background: #0c1c2a; color: var(--accent); border: 1px solid var(--line-strong); font: 700 .7rem ui-monospace, monospace; letter-spacing: .12em; }
 

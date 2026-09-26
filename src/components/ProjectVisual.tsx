@@ -1,5 +1,5 @@
 type ProjectVisualProps = {
-  variant: "optiflow" | "warehouse" | "classroom" | "agent";
+  variant: "optiflow" | "warehouse" | "classroom" | "agent" | "escrow";
 };
 
 export default function ProjectVisual({ variant }: ProjectVisualProps) {
@@ -16,6 +16,22 @@ export default function ProjectVisual({ variant }: ProjectVisualProps) {
         <div className="scan-line" />
         <div className="model-node">AI</div>
         <div className="confidence-card"><b>95.16%</b><span>mAP@50</span></div>
+      </div>
+    );
+  }
+
+  if (variant === "escrow") {
+    return (
+      <div className="project-visual escrow-visual" aria-label="Three-party escrow illustration" role="img">
+        <svg viewBox="0 0 420 220" aria-hidden="true">
+          <path d="M96 60H324M96 160H324M210 60V160" />
+          <rect x="60" y="40" width="72" height="40" rx="6" />
+          <rect x="288" y="40" width="72" height="40" rx="6" />
+          <rect x="174" y="92" width="72" height="40" rx="6" />
+          <rect x="60" y="140" width="72" height="40" rx="6" />
+          <rect x="288" y="140" width="72" height="40" rx="6" />
+        </svg>
+        <span className="ledger-label">ARBITER RELEASES</span>
       </div>
     );
   }
