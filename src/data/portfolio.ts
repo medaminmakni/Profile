@@ -10,6 +10,12 @@ export type Metric = {
   note?: string;
 };
 
+export type Video = {
+  youtubeId: string;
+  title: string;
+  start?: number;
+};
+
 export type Screen = {
   src: string;
   alt: string;
@@ -27,6 +33,7 @@ export type Project = {
   technologies: string[];
   metrics?: Metric[];
   screens?: Screen[];
+  video?: Video;
   links: Link[];
   featured: boolean;
   status: "case-study" | "public-repository" | "project-summary" | "private-repository" | "in-progress";
@@ -276,9 +283,12 @@ export const projects: Project[] = [
       { label: "Release", value: "2 tranches", note: "On shipment, then on delivery" },
       { label: "Audit trail", value: "HCS", note: "Every state change, immutable" },
     ],
-    links: [
-      { label: "Watch the demo", href: "https://www.youtube.com/watch?v=F2wRcFhlHmg", kind: "demo" },
-    ],
+    video: {
+      youtubeId: "F2wRcFhlHmg",
+      title: "Hex-Port demo — Hedera Africa Hackathon",
+      start: 14,
+    },
+    links: [],
     featured: false,
     status: "project-summary",
   },
