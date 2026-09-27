@@ -96,7 +96,7 @@ export default function CvPage() {
           <h2>Profile</h2>
           <div>
             <p>
-              AI Engineer building systems that have to be right in operation, not only in
+              AI Engineer building systems that have to be right in production, not only in
               evaluation. Computer vision and document intelligence in Python and PyTorch; LLM, RAG
               and agent systems on FastAPI backends. I work the full path — dataset preparation,
               model evaluation, backend integration, business rules, and the human review paths that

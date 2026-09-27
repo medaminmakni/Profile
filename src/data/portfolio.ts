@@ -43,7 +43,7 @@ export const profile = {
   name: "Mohamed Amin MAKNI",
   monogram: "MAM",
   headline:
-    "AI Engineer building systems that have to be right in operation, not only in evaluation",
+    "AI Engineer building systems that have to be right in production, not only in evaluation",
   shortHeadline: "AI Engineer · Computer Vision · Document Intelligence · RAG & Agents",
   location: "Sfax, Tunisia",
   email: "mki.medamin@gmail.com",
