@@ -67,7 +67,7 @@ export const profile = {
     open: true,
     status: "Open to full-time roles",
     roles: ["AI Engineer", "Applied AI / Machine Learning Engineer"],
-    arrangements: "Remote · Hybrid · Open to relocation",
+    arrangements: "Based in Sfax · Open to Tunis, remote, or relocation",
     regions: "Tunisia · European Union · United Kingdom · UAE · Remote",
     startNote: "Available immediately",
   },
@@ -113,7 +113,7 @@ export const experience = [
     period: "Feb – Jul 2026",
     location: "Sfax, Tunisia",
     mission:
-      "Designed and delivered OptiFlow Precal Insight, a mobile and AI workflow for processing PRECAL optical forms.",
+      "Designed and delivered OptiFlow Precal Insight, a mobile and AI workflow for processing PRECAL optical forms, now deployed at SIVO.",
     highlights: [
       "Owned requirements analysis, software and AI architecture, mobile and backend implementation, and end-to-end integration.",
       "Built a multi-model document pipeline with confidence scoring, business validation, and human correction loops.",
@@ -124,27 +124,27 @@ export const experience = [
   {
     role: "Backend Developer Intern",
     company: "Altavo Partners",
-    period: "Jun – Oct 2025",
+    period: "Jul – Aug 2025",
     location: "Remote · Paris, France",
     mission:
-      "Built the bank and arbiter side of Hex-Port, a Hedera trade-finance platform for African exporters, in a team of five.",
+      "Built the bank and arbiter side of Hex-Port, a Hedera trade-finance platform for African exporters.",
     highlights: [
-      "The bank service and its REST controllers: KYC review, document validation, dispute handling and order approvals.",
+      "The bank service and its REST controllers: KYC review, document validation, dispute handling, bank authentication and order approvals.",
       "The approvals that release escrowed payment in two tranches, on shipment and on delivery.",
-      "Cookie-based bank authentication, the order workflow, and the merge of two divergent branches into the build that shipped.",
+      "Every order state change is written to a Hedera consensus topic, so the audit trail is verifiable rather than asserted.",
     ],
     technologies: ["TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "Hedera SDK", "Solidity"],
   },
   {
     role: "Full-Stack Developer Intern",
     company: "Infotech Consulting Services (ICS)",
-    period: "Jun – Aug 2024",
+    period: "Jul – Aug 2024",
     location: "Sfax, Tunisia",
     mission:
-      "Developed features for Geex, a university operations platform covering schedules, examinations, users, and resources.",
+      "Built REST endpoints for the examinations and teaching-assignment side of a university administration platform.",
     highlights: [
-      "Built administration workflows for students, classes, and professors.",
-      "Implemented scheduling, examination logistics, and resource-management features.",
+      "Exam sessions, invigilation, teacher workload and timetables, student enrolment.",
+      "Wrote the API documentation the rest of the team integrated against.",
     ],
     technologies: ["Laravel", "Vue.js", "PHP", "MySQL"],
   },
@@ -171,8 +171,8 @@ export const projects: Project[] = [
     contribution: [
       "React Native app for both trainee and coach",
       "Admin web console for coach verification and moderation",
-      "Fifteen Cloud Functions: assignment lifecycle, write-time aggregation, scheduled reporting, subscription webhook",
-      "698 lines of Firestore security rules, with a test suite that runs them against the emulator",
+      "Cloud Functions backend: coach-assignment lifecycle, write-time aggregation, scheduled reporting, subscription webhook",
+      "Firestore security rules with their own test suite, run against the emulator — an untested access rule is an assumption, not a rule",
       "English, French and Arabic including right-to-left layout",
     ],
     technologies: [
@@ -185,8 +185,8 @@ export const projects: Project[] = [
     ],
     metrics: [
       { label: "Roles", value: "3", note: "Trainee, coach, administrator" },
-      { label: "Cloud Functions", value: "15", note: "Callable, triggered, scheduled and webhook" },
-      { label: "Security rules", value: "698 lines", note: "Covered by an emulator test suite" },
+      { label: "Languages", value: "3", note: "English, French, Arabic with RTL" },
+      { label: "Security rules", value: "Tested", note: "Emulator test suite" },
     ],
     screens: [
       {
@@ -323,7 +323,7 @@ export const projects: Project[] = [
     title: "ORYS — AI layer",
     eyebrow: "Team of 4 · In progress · Agent infrastructure",
     summary:
-      "The model and agent layer of a multi-tenant business platform. I am responsible for this layer; the platform is built by a team of four.",
+      "The AI layer of ORYS, a multi-tenant business-management SaaS for small companies — invoicing, stock, clients, staff. I am responsible for this layer; the platform is built by a team of four.",
     role: "Responsible for the AI layer",
     challenge:
       "Let an assistant take real actions inside a business system without ever becoming a privileged database user, and without depending on a single model vendor.",

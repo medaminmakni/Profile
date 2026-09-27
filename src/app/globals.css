@@ -319,7 +319,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .cv-experience li { margin-bottom: .13rem; }
 .cv-tech { margin: 0; color: #5c7485; font-size: .61rem; font-weight: 700; }
 .cv-projects-section { margin-top: .2rem; padding: .8rem 1rem; border: 1px solid #bfd2dc; background: #f5f9fb; }
-.cv-projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.cv-projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .cv-projects-grid article + article { padding-left: 1rem; border-left: 1px solid #cbd9e1; }
 .cv-projects-grid p { margin: .3rem 0; color: #334e61; font-size: .65rem; }
 .cv-projects-grid span { display: block; color: #147ca8; font-size: .58rem; font-weight: 700; }
