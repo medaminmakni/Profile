@@ -10,11 +10,19 @@ export type Metric = {
   note?: string;
 };
 
-export type Video = {
-  youtubeId: string;
-  title: string;
-  start?: number;
-};
+export type Video =
+  | {
+      youtubeId: string;
+      title: string;
+      start?: number;
+    }
+  | {
+      src: string;
+      poster: string;
+      title: string;
+      width: number;
+      height: number;
+    };
 
 export type Screen = {
   src: string;
@@ -308,6 +316,13 @@ export const projects: Project[] = [
       "Dockerized MySQL environment",
     ],
     technologies: ["FastAPI", "Next.js", "YOLO", "Gemini", "ChromaDB", "MySQL", "Docker"],
+    video: {
+      src: "/videos/smartwarehouse-demo.mp4",
+      poster: "/videos/smartwarehouse-demo-poster.jpg",
+      title: "SmartWarehouse AI demo — client ordering assistant, plate recognition at the gate, admin copilot",
+      width: 1280,
+      height: 596,
+    },
     links: [
       {
         label: "View repository",

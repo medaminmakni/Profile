@@ -230,14 +230,29 @@ export default function Home() {
                 </div>
                 {project.video ? (
                   <div className="project-video">
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${project.video.youtubeId}?rel=0&modestbranding=1${project.video.start ? `&start=${project.video.start}` : ""}`}
-                      title={project.video.title}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
+                    {"youtubeId" in project.video ? (
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${project.video.youtubeId}?rel=0&modestbranding=1${project.video.start ? `&start=${project.video.start}` : ""}`}
+                        title={project.video.title}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        controls
+                        preload="none"
+                        playsInline
+                        poster={project.video.poster}
+                        width={project.video.width}
+                        height={project.video.height}
+                        aria-label={project.video.title}
+                        title={project.video.title}
+                      >
+                        <source src={project.video.src} type="video/mp4" />
+                      </video>
+                    )}
                   </div>
                 ) : project.screens ? (
                   <div className="project-screens" aria-label={`${project.title} screenshots`}>
