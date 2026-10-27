@@ -11,11 +11,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${profile.name} | AI Engineer`,
+    default: `${profile.name} | Software Engineer & AI Engineer`,
     template: `%s | ${profile.name}`,
   },
   description:
-    "Mohamed Amin MAKNI is an AI Engineer in Sfax, Tunisia, building computer-vision, document-intelligence, RAG and LLM agent systems end to end \u2014 from dataset and model evaluation through backend integration and human-in-the-loop delivery. Open to AI engineering roles, remote or relocation.",
+    "Mohamed Amin MAKNI is a Software Engineer and AI Engineer based in Sfax, Tunisia. Explore his work in mobile apps, document processing, computer vision and LLM assistants. Available for full-time roles, remote work or relocation.",
   alternates: { canonical: "/" },
   authors: [{ name: profile.name }],
   creator: profile.name,
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: siteUrl,
-    title: `${profile.name} | AI Engineer`,
+    title: `${profile.name} | Software Engineer & AI Engineer`,
     description: profile.valueProposition,
     siteName: profile.name,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | AI Engineer`,
+    title: `${profile.name} | Software Engineer & AI Engineer`,
     description: profile.valueProposition,
   },
   robots: { index: true, follow: true },

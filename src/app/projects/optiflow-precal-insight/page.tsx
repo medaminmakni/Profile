@@ -6,7 +6,7 @@ import ProjectVisual from "@/components/ProjectVisual";
 import { optiFlowMetrics, projects } from "@/data/portfolio";
 import { optiFlowChallenges, optiFlowLearnings, optiFlowPipeline } from "@/data/optiflow";
 
-const project = projects[0];
+const project = projects.find((item) => item.slug === "optiflow-precal-insight")!;
 
 export const metadata: Metadata = {
   title: "OptiFlow Precal Insight Case Study",
@@ -52,7 +52,7 @@ export default function OptiFlowCaseStudy() {
         <Container>
           <div className="case-section-heading"><p className="eyebrow">My role</p><h2>End-to-end ownership across product, software, and AI</h2></div>
           <div className="responsibility-grid">
-            {project.contribution.concat(["Human-in-the-loop validation", "Testing and quality assurance"]).map((item, index) => (
+            {Array.from(new Set([...project.contribution, "Human-in-the-loop validation"])).map((item, index) => (
               <div key={item}><span>0{index + 1}</span><p>{item}</p></div>
             ))}
           </div>

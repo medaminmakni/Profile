@@ -44,12 +44,12 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav className="nav-shell" aria-label="Primary navigation">
-        <a className="wordmark" href="#top" aria-label={`${profile.name}, home`}>
+        <Link className="wordmark" href="/#top" aria-label={`${profile.name}, home`}>
           <span>{profile.monogram}</span>
           <span className="wordmark-name">Mohamed Amin MAKNI</span>
-        </a>
+        </Link>
 
-        <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>
+        <div id="mobile-navigation" className={`nav-links ${menuOpen ? "is-open" : ""}`}>
           {navigation.map(([label, id]) => (
             <a
               key={id}

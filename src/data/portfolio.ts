@@ -51,16 +51,16 @@ export const profile = {
   name: "Mohamed Amin MAKNI",
   monogram: "MAM",
   headline:
-    "AI Engineer building systems that have to be right in production, not only in evaluation",
-  shortHeadline: "AI Engineer · Computer Vision · Document Intelligence · RAG & Agents",
+    "Software Engineer & AI Engineer",
+  shortHeadline: "Software Engineer · AI · Computer Vision · Web & Mobile",
   location: "Sfax, Tunisia",
   email: "mki.medamin@gmail.com",
   phone: "+216 52 855 085",
   portrait: "/images/profile.jpg",
   biography:
-    "AI Engineer working across computer vision, document intelligence, RAG and agent systems. I work the full path — dataset preparation, model training and evaluation, backend and API integration, business rules, and the human review paths that catch what the model gets wrong. I also ship complete products: Fytrak is a three-role coaching platform I built end to end, alone.",
+    "I graduated in computer engineering from IIT Sfax in July 2026. During my final-year internship at Essilor SIVO, I developed a document-processing pipeline and a mobile ordering app for opticians. My other projects include Tunisian licence-plate recognition, LLM assistant infrastructure and a coaching app connecting coaches and trainees.",
   valueProposition:
-    "A model that scores well and a system a team can rely on are different things. I build the second, and I test the parts that decide whether it can be trusted.",
+    "I build web and mobile applications with computer vision and LLM features. My work includes an ordering app for opticians, Tunisian licence-plate recognition and a coaching platform.",
   links: {
     linkedin: "https://www.linkedin.com/in/makni-med-amin/",
     github: "https://github.com/medaminmakni",
@@ -74,7 +74,7 @@ export const profile = {
   availability: {
     open: true,
     status: "Open to full-time roles",
-    roles: ["AI Engineer", "Applied AI / Machine Learning Engineer"],
+    roles: ["Software Engineer", "AI Engineer"],
     arrangements: "Based in Sfax · Open to Tunis, remote, or relocation",
     regions: "Tunisia · European Union · United Kingdom · UAE · Remote",
     startNote: "Available immediately",
@@ -116,16 +116,16 @@ export const expertise = [
 
 export const experience = [
   {
-    role: "AI & Software Engineer — Final-Year Engineering Project",
+    role: "AI Engineer Intern — Final-Year Project",
     company: "Essilor SIVO (EssilorLuxottica)",
     period: "Feb – Jul 2026",
     location: "Sfax, Tunisia",
     mission:
-      "Designed and delivered OptiFlow Precal Insight, a mobile and AI workflow for processing PRECAL optical forms, now deployed at SIVO.",
+      "Developed OptiFlow, a React Native app and document-processing pipeline for opticians to photograph order forms, check extracted data, submit orders and track their status.",
     highlights: [
-      "Owned requirements analysis, software and AI architecture, mobile and backend implementation, and end-to-end integration.",
+      "Gathered requirements, prepared training data and implemented the mobile app and document pipeline.",
       "Built a multi-model document pipeline with confidence scoring, business validation, and human correction loops.",
-      "Validated the system through model evaluation and end-to-end human-in-the-loop workflow checks.",
+      "Trained and evaluated YOLO11 field detection and connected OCR results to business validation and human review.",
     ],
     technologies: ["YOLO11", "EfficientNetV2-S", "TrOCR", "GLM-OCR", "RapidFuzz"],
   },
@@ -166,21 +166,21 @@ export const optiFlowMetrics: Metric[] = [
   { label: "mAP@50–95", value: "62.69%", note: "Detection evaluation" },
 ];
 
-export const projects: Project[] = [
+const projectData: Project[] = [
   {
     slug: "fytrak",
     title: "Fytrak",
-    eyebrow: "Personal project · Shipped solo · Mobile platform",
+    eyebrow: "Personal project · In development · Mobile platform",
     summary:
       "A three-role coaching platform — trainee, coach, admin — built end to end on my own: mobile app, admin console, cloud backend.",
     role: "Sole engineer, end to end",
     challenge:
-      "Give a coach and their client one place to run a programme together, with an access model strict enough that neither can see what the other should not.",
+      "Bring workout plans, nutrition, completed sessions and coach–trainee follow-up into one application.",
     contribution: [
       "React Native app for both trainee and coach",
       "Admin web console for coach verification and moderation",
       "Cloud Functions backend: coach-assignment lifecycle, write-time aggregation, scheduled reporting, subscription webhook",
-      "Firestore security rules with their own test suite, run against the emulator — an untested access rule is an assumption, not a rule",
+      "Workout and meal-plan assignments, activity logging, progress tracking and coach–trainee messaging",
       "English, French and Arabic including right-to-left layout",
     ],
     technologies: [
@@ -210,7 +210,7 @@ export const projects: Project[] = [
       {
         src: "/images/fytrak/pr-detected.webp",
         alt: "Fytrak workout logging screen with a personal-record notification derived from the logged sets",
-        caption: "A PR is derived from the logged sets, not entered by hand",
+        caption: "Personal records calculated from completed sets",
       },
       {
         src: "/images/fytrak/meal-log.webp",
@@ -225,7 +225,7 @@ export const projects: Project[] = [
       {
         src: "/images/fytrak/coach-daily-report.webp",
         alt: "Fytrak coach reading a client's daily report with nutrition summary and completed session",
-        caption: "and the coach reads back what actually happened",
+        caption: "Daily reports for coaches to review completed sessions",
       },
     ],
     links: [
@@ -239,13 +239,13 @@ export const projects: Project[] = [
     title: "OptiFlow Precal Insight",
     eyebrow: "Confidential case study · Document intelligence",
     summary:
-      "A mobile and AI system that turns photographed PRECAL optical forms into reviewed, business-ready data.",
+      "An ordering app for opticians, with automatic extraction and review of photographed PRECAL forms, order submission and status tracking.",
     role: "End-to-end software and AI engineering",
     challenge:
       "Replace a slow, error-prone manual transcription flow while preserving expert control over uncertain predictions.",
     contribution: [
       "Requirements and architecture",
-      "Mobile and backend delivery",
+      "React Native order capture, data review, submission and tracking",
       "Dataset preparation and model evaluation",
       "AI pipeline integration",
       "Testing and quality assurance",
@@ -303,15 +303,15 @@ export const projects: Project[] = [
   {
     slug: "smartwarehouse-ai",
     title: "SmartWarehouse AI",
-    eyebrow: "Public repository · RAG & computer vision",
+    eyebrow: "Academic project · RAG & computer vision",
     summary:
-      "A logistics platform that combines vehicle-image processing, grounded AI decisions, and warehouse operations.",
+      "An intelligent warehouse-management application using computer vision, LLM reasoning and RAG to identify arriving vehicles, find their orders and recommend loading docks.",
     role: "Full-stack and AI engineering",
     challenge:
       "Connect inbound and outbound warehouse workflows to vision, inventory data, and context-aware assistance.",
     contribution: [
       "FastAPI service and Next.js interface",
-      "YOLO and Gemini vision workflow",
+      "Trained YOLO detection for Tunisian licence plates, with Gemini OCR for character recognition",
       "ChromaDB-backed RAG engine",
       "Dockerized MySQL environment",
     ],
@@ -344,8 +344,8 @@ export const projects: Project[] = [
       "Let an assistant take real actions inside a business system without ever becoming a privileged database user, and without depending on a single model vendor.",
     contribution: [
       "Model-provider abstraction: one interface, two adapters — OpenAI-compatible (Ollama, OpenAI, OpenRouter) and Anthropic Messages",
-      "Both adapters derived from the vendors' published SDK types rather than their documentation, which exposed three defects the existing tests all passed — two would have reached production",
-      "Agent tools that each wrap one API call as the acting user: no database credential, no SQL, so every action inherits that user's permissions and audit trail",
+      "Tool-calling loop with Zod argument validation and Vitest tests for provider responses and execution",
+      "Completed provider adapters and tool infrastructure; business integrations are pending API endpoints",
       "Token and cost accounting normalised across providers",
     ],
     technologies: ["TypeScript", "Anthropic SDK", "OpenAI SDK", "Zod", "Vitest", "NestJS"],
@@ -380,7 +380,7 @@ export const education = [
     degree: "National Engineering Degree in Computer Engineering",
     institution: "International Institute of Technology (IIT)",
     location: "Sfax, Tunisia",
-    status: "Software Engineering & Business Intelligence",
+    status: "Graduated July 2026 · Software Engineering & Business Intelligence",
   },
   {
     degree: "Preparatory Classes for Engineering Schools",
@@ -423,3 +423,6 @@ export const contentNeeds = [
   "Verified monitoring, observability, and DevSecOps tool names",
   "OptiFlow remains confidential; source code, screenshots, implementation artifacts, and demo links must not be published",
 ] as const;
+
+const projectOrder = ["optiflow-precal-insight", "smartwarehouse-ai", "orys-ai-layer", "fytrak", "hex-port", "intelligent-online-classroom"];
+export const projects: Project[] = [...projectData].sort((a, b) => projectOrder.indexOf(a.slug) - projectOrder.indexOf(b.slug));

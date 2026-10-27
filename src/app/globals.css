@@ -647,3 +647,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 900px) {
   .project-video { border-left: 0; border-top: 1px solid var(--line); min-height: unset; padding: 1.2rem; }
 }
+
+/* Keep the role and availability visible before the first scroll. */
+.hero { min-height: auto; padding-top: 7.5rem; padding-bottom: 4rem; }
+.hero h1 { font-size: clamp(3rem, 5.6vw, 5rem); line-height: 1; letter-spacing: -.055em; }
+.hero-headline { margin-top: 1.3rem; }
+.project-contribution { margin: 1.4rem 0; }
+.project-contribution h4 { margin: 0 0 .5rem; font-size: .85rem; }
+.project-contribution ul { padding-left: 1.2rem; color: var(--muted); font-size: .9rem; }
+.project-contribution li + li { margin-top: .4rem; }
+.project-status { color: var(--accent); font-size: .85rem; }
+.metric-strip small { display: block; color: var(--muted); font-size: .65rem; margin-top: .3rem; }
+@media (max-width: 720px) { .hero { padding-top: 7rem; } .hero h1 { font-size: clamp(2.7rem, 11vw, 4rem); } }

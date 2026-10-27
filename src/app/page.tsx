@@ -15,7 +15,6 @@ import ProjectVisual from "@/components/ProjectVisual";
 import { notes } from "@/data/notes";
 import { siteUrl } from "@/lib/site";
 import {
-  approach,
   certifications,
   education,
   experience,
@@ -49,7 +48,7 @@ export default function Home() {
     name: profile.name,
     givenName: "Mohamed Amin",
     familyName: "MAKNI",
-    jobTitle: "AI Engineer",
+    jobTitle: "Software Engineer & AI Engineer",
     description: profile.biography,
     address: { "@type": "PostalAddress", addressLocality: "Sfax", addressCountry: "TN" },
     email: `mailto:${profile.email}`,
@@ -137,7 +136,7 @@ export default function Home() {
             <div className="hero-proof" aria-label="Primary engineering focus">
               <div><span>01</span><b>Applied AI</b><small>Vision · OCR · Evaluation</small></div>
               <div><span>02</span><b>Generative AI</b><small>RAG · LLMs · Agents</small></div>
-              <div><span>03</span><b>AI product delivery</b><small>Backend · APIs · MLOps</small></div>
+              <div><span>03</span><b>AI product delivery</b><small>Backend · Web · Mobile</small></div>
             </div>
           </div>
           <div className="hero-portrait-wrap">
@@ -153,13 +152,13 @@ export default function Home() {
       <section className="section section-rule" id="about">
         <Container className="about-grid">
           <div>
-            <p className="eyebrow">01 / Positioning</p>
-            <p className="display-statement">Engineering useful AI across <em>models, software, and human workflows.</em></p>
+            <p className="eyebrow">01 / About me</p>
+            <p className="display-statement">Software, AI and <em>the applications I build.</em></p>
           </div>
           <div className="about-copy">
             <p>{profile.biography}</p>
             <div className="operating-principles">
-              <span>Secure by design</span><span>Observable in operation</span><span>Measured by outcomes</span>
+              <span>Computer engineering graduate · July 2026</span><span>Python · TypeScript · React Native</span><span>Arabic · French · English</span>
             </div>
           </div>
         </Container>
@@ -167,7 +166,7 @@ export default function Home() {
 
       <section className="section muted-section" id="experience">
         <Container>
-          <SectionHeading eyebrow="02 / Experience" title="Work shaped by real workflows" description="Selected engagements that demonstrate system ownership, backend delivery, and applied engineering." />
+          <SectionHeading eyebrow="02 / Experience" title="Experience" />
           <div className="timeline">
             {experience.map((item, index) => (
               <article className="timeline-item" key={`${item.company}-${item.role}`}>
@@ -188,7 +187,7 @@ export default function Home() {
 
       <section className="section" id="expertise">
         <Container>
-          <SectionHeading eyebrow="03 / Expertise" title="A focused engineering toolkit" description="Capabilities are grouped by the systems they help deliver—not presented as an undifferentiated technology wall." />
+          <SectionHeading eyebrow="03 / Expertise" title="Technical skills" />
           <div className="expertise-grid">
             {expertise.map((group, index) => (
               <article className="expertise-card" key={group.title}>
@@ -204,7 +203,7 @@ export default function Home() {
 
       <section className="section projects-section" id="projects">
         <Container>
-          <SectionHeading eyebrow="04 / Selected work" title="Proof through engineering decisions" description="Selected for relevance, architectural depth, and evidence I can show." />
+          <SectionHeading eyebrow="04 / Selected work" title="Projects" description="The problem, my contribution and the current result." />
           <div className="projects-list">
             {projects.map((project, index) => (
               <article className={`project-row ${index === 0 ? "project-row-featured" : ""}`} key={project.slug}>
@@ -212,10 +211,11 @@ export default function Home() {
                   <p className="project-eyebrow">{project.eyebrow}</p>
                   <h3>{project.title}</h3>
                   <p className="project-summary">{project.summary}</p>
-                  <dl><div><dt>Role</dt><dd>{project.role}</dd></div><div><dt>Challenge</dt><dd>{project.challenge}</dd></div></dl>
+                  <dl><div><dt>Role</dt><dd>{project.role}</dd></div><div><dt>Problem</dt><dd>{project.challenge}</dd></div></dl>
+                  <div className="project-contribution"><h4>My work</h4><ul>{project.contribution.slice(0, 4).map((item) => <li key={item}>{item}</li>)}</ul><p className="project-status">{project.status === "in-progress" ? "Status: In development" : project.slug === "fytrak" ? "Status: Working prototype; not publicly released" : project.slug === "smartwarehouse-ai" ? "Result: Vehicle recognition connected to order lookup and dock recommendations" : project.slug === "optiflow-precal-insight" ? "Result: Document extraction connected to mobile order capture and review" : ""}</p></div>
                   {project.metrics ? (
                     <div className="metric-strip">
-                      {project.metrics.slice(0, 3).map((metric) => <div key={metric.label}><b>{metric.value}</b><span>{metric.label}</span></div>)}
+                      {project.metrics.slice(0, 3).map((metric) => <div key={metric.label}><b>{metric.value}</b><span>{metric.label}</span>{metric.note ? <small>{metric.note}</small> : null}</div>)}
                     </div>
                   ) : null}
                   <div className="tags">{project.technologies.slice(0, 6).map((technology) => <span key={technology}>{technology}</span>)}</div>
@@ -275,20 +275,9 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="section approach-section" id="approach">
-        <Container>
-          <SectionHeading eyebrow="05 / Engineering approach" title="From problem framing to operational feedback" />
-          <div className="approach-grid">
-            {approach.map(([number, title, detail]) => (
-              <article key={number}><span>{number}</span><h3>{title}</h3><p>{detail}</p></article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="section" id="credentials">
         <Container>
-          <SectionHeading eyebrow="06 / Credentials" title="Education and verified certifications" />
+          <SectionHeading eyebrow="06 / Credentials" title="Education and certifications" />
           <div className="credentials-grid">
             <div>
               <p className="column-label">Education</p>
@@ -335,9 +324,9 @@ export default function Home() {
 
       <section className="contact-section" id="contact">
         <Container className="contact-inner">
-          <div><p className="eyebrow">08 / Contact</p><h2>Let’s build systems that are ready to operate.</h2></div>
+          <div><p className="eyebrow">08 / Contact</p><h2>Get in touch</h2></div>
           <div className="contact-copy">
-            <p>For AI engineering, computer vision, RAG, intelligent-agent, backend, or software architecture opportunities, reach me directly.</p>
+            <p>For software engineering or AI engineering opportunities, contact me by email or LinkedIn.</p>
             <p className="availability-detail">
               <b>{profile.availability.status}:</b> {profile.availability.roles.join(", ")}.{" "}
               {profile.availability.arrangements}. Considering {profile.availability.regions}.
